@@ -1,0 +1,27 @@
+<div>
+    <h1 class="my-10 text-center text-green-600 text-4xl font-bold">All Brands</h1>
+</div>
+<div class="container grid md:grid-cols-4 w-[90%] mx-auto ">
+    
+    @for (brand of brandlist; track $index) {
+        
+        <div class="max-w-sm bg-white  rounded-lg shadow-sm  border border-gray-200 m-2 border border-transparent hover:border-green-500 transition duration-400 rounded-lg p-4 hover:drop-shadow-[0_2px_3px_rgba(34,197,94,0.7)]">
+            
+    <a class="">
+        <img class="rounded-t-lg w-full cursor-pointer" (click)="detailsBrand()" [src]="brand.image" alt="" />
+    </a>
+    <div class="p-5">
+        <a >
+            <h5 class="mb-2   text-center tracking-tight text-gray-900 text-gray-400">{{brand.name}}</h5>
+        </a>
+        
+     
+    </div>
+</div>
+    }
+    
+</div>
+
+
+
+

@@ -1,0 +1,15 @@
+<div class="container w-[90%] mx-auto">
+    <div class="my-5 w-[50%] mx-auto">
+        <input [(ngModel)]="inputText" class="w-full border border-gray-400 rounded" type="text" placeholder="Search...."/>
+        
+    </div>
+    <div class="grid md:grid-cols-12">
+        @for (data of dataList() | search:inputText; track $index) {
+            <div class="md:col-span-3">
+                <app-card [productData]="data"/>
+        </div>
+        
+        }
+    </div>
+    
+</div>

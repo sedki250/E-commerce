@@ -1,0 +1,106 @@
+<section>
+    <div class="bg-gray-100 border border-transparent w-[60%] mx-auto rounded my-8 p-5">
+        <h1 class="text-3xl text-green-600 my-4 text-center">Registar Now</h1>
+
+        <div>
+            <form [formGroup]="registarForm" (ngSubmit)="submitForm()">
+                <div class="relative ">
+                <input type="text" id="name" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-300 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" "
+                formControlName="name" />
+                
+                <label for="name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Name</label>
+            </div>
+            @if (registarForm.get('name')?.errors && registarForm.get('name')?.touched) {
+                <div class="text-red-600">
+                    @if (registarForm.get('name')?.getError('required')) {
+                        <p>name is required</p>
+                    }
+                    @if (registarForm.get('name')?.getError('minlength')) {
+                        <p>name min length is 3</p>
+                    }
+                    @if (registarForm.get('name')?.getError('maxlength')) {
+                        <p>name is 20Char</p>
+                    }
+            
+                </div>
+            }
+            
+            <div class="relative mt-7">
+                <input type="email" id="email" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm  border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-300 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " 
+                formControlName="email" />
+                
+                <label for="email" class="absolute text-sm text-gray-500 dark:text-gary-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email</label>
+            </div>
+            @if (registarForm.get('email')?.errors && registarForm.get('email')?.touched) {
+                <div class="text-red-600">
+                    @if (registarForm.get('email')?.getError('required')) {
+                        <p>name is required</p>
+                    }
+                    @if (registarForm.get('name')?.getError('email')) {
+                        <p>email pattern is inavalid</p>
+                    }
+            
+                </div>
+            }
+            <div class="relative mt-7">
+                <input type="password" id="password" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm  border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-300 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " 
+                formControlName="password"/>
+                
+                <label for="password" class="absolute text-sm text-gray-500 dark:text-gary-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Password</label>
+            </div>
+            @if (registarForm.get('password')?.errors && registarForm.get('password')?.touched) {
+                <div class="text-red-600">
+                    @if (registarForm.get('password')?.getError('required')) {
+                        <p>password is required</p>
+                    }
+                    @if (registarForm.get('password')?.getError('pattern')) {
+                        <p>enter avalid password</p>
+                    }
+                    
+                    
+            
+                </div>
+            }
+            <div class="relative mt-7">
+                <input type="password" id="rePassword" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm  border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-300 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " 
+                formControlName="rePassword"/>
+                
+                <label for="rePassword" class="absolute text-sm text-gray-500 dark:text-gary-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Confirm Password</label>
+            </div>
+            @if (registarForm.get('rePassword')?.errors && registarForm.get('rePassword')?.touched) {
+                <!-- <div class="text-red-600">
+                    @if (registarForm.get('rePassword')?.getError('required')) {
+                        <p>confirm password is required</p>
+                    }
+                </div> -->
+            }
+            @if (registarForm.getError('mismatch') && registarForm.get('rePassword')?.touched) {
+                <p class="text-red-600">confirmpassword not matched</p>
+            }
+            <div class="relative mt-7">
+                <input type="tel" id="userPhone" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm  border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-300 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer" placeholder=" " 
+                formControlName="phone"/>
+                
+                <label for="userPhone" class="absolute text-sm text-gray-500 dark:text-gary-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Phone</label>
+            </div>
+            @if (registarForm.get('phone')?.errors && registarForm.get('phone')?.touched) {
+                <div class="text-red-600">
+                    @if (registarForm.get('phone')?.getError('required')) {
+                        <p>phone is required</p>
+                    }
+                    @if (registarForm.get('phone')?.getError('pattern')) {
+                        <p>enter avalid phone number</p>
+                    }
+                </div>
+            }
+            
+            <button type="submit" class="btn my-5">Registar Now
+                @if (isLoading) {
+                    <i class="fas fa-spinner"></i>
+                }
+            </button>
+            <p class="text-red-600 text-center">{{errMsg}}</p>
+            </form>
+        </div>
+    </div>
+</section>

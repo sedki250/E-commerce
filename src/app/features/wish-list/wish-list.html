@@ -1,0 +1,42 @@
+
+<section class="container w-[90%] mx-auto my-5">
+<div>
+<div>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-100">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 text-gray-400 my-3">
+        
+        <tbody>
+            @for (product of wishlistItems; track $index) {
+                <tr class="border border-gray-200 bg-gray-100">
+                    <td class="p-10">
+                        <img [src]="product.imageCover" class="w-full md:w-32 max-w-full max-h-full" [alt]="product.title">
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-gray-700 text-lg ">
+                        {{product.title}}
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-gray-700 text-lg">
+                        {{product.price|currency:'EGP'}}
+                    </td>
+                    <td  class="px-6 py-4">
+                        <div class="flex">
+                            <a (click)="removeItem(product._id)"  class="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                            <i (click)="removeItem(product._id)" class="mt-1 fa-solid fa-trash text-red-500 cursor-pointer"></i>
+                        </div>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+}
+        </tbody>
+      
+    </table>
+  </div>
+  
+</div>
+<div class="flex justify-end pt-5 mx-8">
+  <a [routerLink]="['/checkout',productId]" class="cursor-pointer border border-green-300 px-8 text-green-400 px-5 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-1 py-2.5 text-center dark:hover:bg-green-700 hover:text-white transation duration-200 dark:focus:ring-green-800">
+    Check Out
+  </a>
+</div>
+</div>
+</section>

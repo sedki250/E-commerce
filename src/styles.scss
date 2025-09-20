@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@source "../node_modules/flowbite";
+@plugin "flowbite/plugin";
+
+@layer component{
+    .btn
+    {
+        @apply bg-green-700 hover:bg-green-900 text-white w-full py-3 rounded-sm
+             
+    }
+}
