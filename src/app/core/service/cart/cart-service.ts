@@ -28,9 +28,7 @@ export class CartService {
           {
             productId:productId
           },
-          {
-            headers:{token:this.cookies.get('token')}
-          }
+        
     )
   }
   updateProductToCart(count:number,productId:string):Observable<any>{
@@ -38,30 +36,22 @@ export class CartService {
           {
             count:count
           },
-          {
-            headers:{token:this.cookies.get('token')}
-          }
+        
     )
   }
   getProductToCart():Observable<any>{
     return this.http.get(`${environment.baseUrl}cart`,
-          {
-            headers:{token:this.cookies.get('token')}
-          }
+         
     )
   }
   deleteProductFromCart(productId:string):Observable<any>{
     return this.http.delete(`${environment.baseUrl}cart/${productId}`,
-          {
-            headers:{token:this.cookies.get('token')}
-          }
+        
     )
   }
   clearCart():Observable<any>{
     return this.http.delete(`${environment.baseUrl}cart`,
-          {
-            headers:{token:this.cookies.get('token')}
-          }
+       
     )
   }
 }

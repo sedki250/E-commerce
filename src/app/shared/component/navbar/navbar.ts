@@ -1,3 +1,4 @@
+import { MyTranslate } from './../../../core/service/myTranslate/my-translate';
 import { LoginService } from './../../../core/service/auth/login-service';
 import { Component, inject } from '@angular/core';
 import { FlowbiteService } from '../../../core/service/flowbite/flowbite-service';
@@ -6,16 +7,17 @@ import {  OnInit } from '@angular/core';import { RouterLink } from '@angular/rou
 import { RouterLinkActive } from '@angular/router';
 
 import { CartService } from '../../../core/service/cart/cart-service';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive,TranslateModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
 export class Navbar {
 isLogedIn!:boolean;
 cartNumber:number=0;
-constructor(private flowbiteService: FlowbiteService , private LoginService:LoginService,private cart:CartService) {
+constructor(private flowbiteService: FlowbiteService ,public _MyTranslate:MyTranslate ,private LoginService:LoginService,private cart:CartService) {
 
 }
 
