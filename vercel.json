@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "ANGULAR_ENABLE_EXPERIMENTAL_SSR": "false"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
