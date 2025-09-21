@@ -18,6 +18,6 @@ export const appConfig: ApplicationConfig = {
     provideToastr(),
     provideHttpClient(withFetch()),
     importProvidersFrom([CookieService]),
-    { provide: LocationStrategy, useClass: HashLocationStrategy }  // 👈 هنا الإضافة
+    { provide: LocationStrategy, useClass: HashLocationStrategy } 
   ]
 };
