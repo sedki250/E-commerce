@@ -14,7 +14,7 @@
             @if (checkOutForm.get('details')?.errors && checkOutForm.get('details')?.touched) {
                 <div class="text-red-600">
                     @if (checkOutForm.get('details')?.getError('required')) {
-                        <p>name is required</p>
+                        <p>details is required</p>
                     }
                     
             
@@ -30,7 +30,7 @@
             @if (checkOutForm.get('city')?.errors && checkOutForm.get('city')?.touched) {
                 <div class="text-red-600">
                     @if (checkOutForm.get('city')?.getError('required')) {
-                        <p>name is required</p>
+                        <p>city is required</p>
                     }
                     
             
@@ -46,7 +46,7 @@
             @if (checkOutForm.get('phone')?.errors && checkOutForm.get('phone')?.touched) {
                 <div class="text-red-600">
                     @if (checkOutForm.get('details')?.getError('required')) {
-                        <p>name is required</p>
+                        <p>phone is required</p>
                     }
                     
             
