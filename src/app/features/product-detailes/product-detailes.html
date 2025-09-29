@@ -1,40 +1,41 @@
-<div class="grid sm:grid-cols-12 py-10 w-[90%] mx-auto">
-    <div class="col-span-3"> 
-        
-        <div>
-            <owl-carousel-o [options]="customOptions">
-                @for (slide of dataDetails?.images;  track $index) {
-                    <ng-template carouselSlide>
-                        <img [src]="slide">
-                    </ng-template>
-                    }
-            </owl-carousel-o>
-        </div>
-        
+<div class="grid grid-cols-1 sm:grid-cols-12 py-10 w-[90%] mx-auto gap-6">
+  <!-- Images Carousel -->
+  <div class="sm:col-span-3 w-full">
+    <div>
+      <owl-carousel-o [options]="customOptions">
+        @for (slide of dataDetails?.images; track $index) {
+          <ng-template carouselSlide>
+            <img [src]="slide" class="w-full h-auto object-contain">
+          </ng-template>
+        }
+      </owl-carousel-o>
     </div>
-    <div class="col-span-9 flex flex-col justify-between px-10 h-full">
-        
-        <div>
-            <h1 class="font-bold text-3xl">{{dataDetails?.title}}</h1>
-            <p class="text-gray-500">{{dataDetails?.description}}</p>
-            
-        </div>
-        <div>
-            <h1 class="text-green-600">{{dataDetails.category?.name}}</h1>
+  </div>
 
-            <div class="flex py-3 justify-between items-center ">
-                        <div>
-                            <i class="fas fa-star text-yellow-500"></i>
-                            <span>{{dataDetails?.ratingsQuantity}}</span>
-                        </div>
-                        
-                        <div >
-                            <span>{{dataDetails?.price}}</span>
-                        </div>
-            </div>
-
-            <button (click)="addProduct(dataDetails._id)" class="btn cursor-pointer">Add To Cart</button>
-        </div>
-
+  <!-- Product Details -->
+  <div class="sm:col-span-9 flex flex-col justify-between px-0 sm:px-10">
+    <!-- Title & Description -->
+    <div class="mb-6 sm:mb-0">
+      <h1 class="font-bold text-3xl">{{dataDetails?.title}}</h1>
+      <p class="text-gray-500">{{dataDetails?.description}}</p>
     </div>
+
+    <!-- Category, Ratings, Price & Button -->
+    <div>
+      <h1 class="text-green-600 mb-3">{{dataDetails.category?.name}}</h1>
+
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center py-3 gap-3">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-star text-yellow-500"></i>
+          <span>{{dataDetails?.ratingsQuantity}}</span>
+        </div>
+
+        <div class="text-lg font-semibold">
+          <span>{{dataDetails?.price}}</span>
+        </div>
+      </div>
+
+      <button (click)="addProduct(dataDetails._id)" class="btn w-full sm:w-auto mt-3 sm:mt-0">Add To Cart</button>
+    </div>
+  </div>
 </div>

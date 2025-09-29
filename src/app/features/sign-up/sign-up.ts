@@ -5,10 +5,11 @@ import { signUpService } from './../../core/service/auth/signup';
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { error, group } from 'console';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './sign-up.html',
   styleUrl: './sign-up.scss'
 })

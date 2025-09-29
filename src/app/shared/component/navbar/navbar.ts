@@ -8,15 +8,17 @@ import { RouterLinkActive } from '@angular/router';
 
 import { CartService } from '../../../core/service/cart/cart-service';
 import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive,TranslateModule],
+  imports: [RouterLink, RouterLinkActive,TranslateModule,CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
 export class Navbar {
 isLogedIn!:boolean;
 cartNumber:number=0;
+isMenuOpen: any;
 constructor(private flowbiteService: FlowbiteService ,public _MyTranslate:MyTranslate ,private LoginService:LoginService,private cart:CartService) {
 
 }

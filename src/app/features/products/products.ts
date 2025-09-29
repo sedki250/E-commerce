@@ -4,10 +4,11 @@ import { Card } from "../card/card";
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../../shared/pipe/search/search-pipe';
 import { WishListService } from '../../core/service/wishlist/wish-list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-products',
-  imports: [Card,FormsModule,SearchPipe],
+  imports: [Card,FormsModule,SearchPipe,CommonModule],
   templateUrl: './products.html',
   styleUrl: './products.scss'
 })
