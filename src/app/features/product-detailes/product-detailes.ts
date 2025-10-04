@@ -5,9 +5,10 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../../core/service/cart/cart-service';
 import { SearchPipe } from '../../shared/pipe/search/search-pipe';
+import { CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-product-detailes',
-  imports: [CarouselModule,SearchPipe],
+  imports: [CarouselModule,CurrencyPipe],
   templateUrl: './product-detailes.html',
   styleUrl: './product-detailes.scss'
 })
