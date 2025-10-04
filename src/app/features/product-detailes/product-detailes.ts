@@ -1,15 +1,13 @@
 import { ProductService } from '../../core/service/productService/product-service';
-import { Card } from './../card/card';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/internal/Observable';
-import { environment } from '../../../environments/environment.development';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../../core/service/cart/cart-service';
+import { SearchPipe } from '../../shared/pipe/search/search-pipe';
 @Component({
   selector: 'app-product-detailes',
-  imports: [CarouselModule],
+  imports: [CarouselModule,SearchPipe],
   templateUrl: './product-detailes.html',
   styleUrl: './product-detailes.scss'
 })

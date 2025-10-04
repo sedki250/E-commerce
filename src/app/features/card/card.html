@@ -1,34 +1,39 @@
-<div>
-    <div [routerLink]="['/productDetails',productData?._id]" 
-    class="overflow-hidden group/card m-6 bg-white  transtion duration-500 cursor-pointer border-gray-300 hover:border-green-400 rounded p-1 border border-transparent hover:border-green-500 transition duration-200 rounded-lg p-4 hover:drop-shadow-[0_2px_3px_rgba(34,197,94,0.7)]">
-                <div class="md:grid-cols-12">
-                    <img [src]="productData?.imageCover" alt="" class="h-[350px]">
-                    <h3 class="text-green-600 py-4">{{productData?.category?.name}}</h3>
-                    <h4 class="font-semibold py-2">{{productData?.title| twoWords}}</h4>
-                </div>
-                <div class="flex justify-between items-center ">
-                    
-                    <div >
-                        <span>{{productData?.price | currency:'EGP'}}</span>
-                    </div>
-                    <div>
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <span>{{productData?.ratingsQuantity}}</span>
-                    </div>
-                </div>
-<button  (click)="toggleHeart($event)" class="mt-2">
-    <i class="fa-solid fa-heart text-2xl"
-       [class.text-red-500]="heartActive"
-       [class.text-gray-500]="!heartActive"></i>
-  </button>
-                
-                <button (click)="addProduct(productData?._id)" class="btn
-                group-hover/card:translate-y-[0]
-                translate-y-[140%] transtion-all duration-400">
-                <i class="fa-solid fa-plus "></i>
-                Add
-            </button>
-            
-           
-            </div>
+<div class="">
+  <div
+    [routerLink]="['/productDetails', productData?._id]"
+    class="overflow-hidden group/card m-6 bg-white transtion duration-500 cursor-pointer border-gray-300 hover:border-green-400 rounded p-1 border border-transparent hover:border-green-500 transition duration-200 rounded-lg p-4 hover:drop-shadow-[0_2px_3px_rgba(34,197,94,0.7)]"
+  >
+    <div class="md:grid-cols-12">
+      <img [src]="productData?.imageCover" alt="" class="h-[350px]" />
+      <h3 class="text-green-600 py-4">{{ productData?.category?.name }}</h3>
+      <h4 class="font-semibold py-2">{{ productData?.title | twoWords }}</h4>
+    </div>
+    <div class="flex justify-between items-center">
+      <div>
+        <span>{{ productData?.price | currency : 'EGP' }}</span>
+      </div>
+      <div>
+        <i class="fas fa-star text-yellow-500"></i>
+        <span>{{ productData?.ratingsQuantity }}</span>
+      </div>
+    </div>
+  <div class="flex justify-end">
+      <button (click)="toggleHeart($event)" class="mt-2">
+        <i
+          class="fa-solid fa-heart text-2xl"
+          [class.text-red-500]="heartActive"
+          [class.text-gray-500]="!heartActive"
+        ></i>
+      </button>
+
+  </div>
+      <button
+        (click)="addProduct(productData?._id)"
+        class="btn group-hover/card:translate-y-[0] translate-y-[140%] transtion-all duration-400"
+      >
+        <i class="fa-solid fa-plus"></i>
+        Add
+      </button>
+    
+  </div>
 </div>
