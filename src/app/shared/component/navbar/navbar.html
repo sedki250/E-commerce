@@ -78,7 +78,7 @@
         @if (!isLogedIn) {
         <li>
           <a routerLink="/login" routerLinkActive="text-white bg-green-600"
-            class="block py-2 px-4 text-gray-800 hover:text-white transition-colors duration-200 rounded-sm">Login</a>
+            class="block py-2 px-4 text-gray-800 hover:text-white transition-colors duration-200 rounded-sm"><i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
         <li>
           <a routerLink="/signUp" routerLinkActive="text-white bg-green-600"
@@ -90,7 +90,7 @@
         @if (isLogedIn) {
         <li>
           <a (click)="signOut()"
-            class="block cursor-pointer py-2 px-4 text-gray-800 hover:text-green-600 transition-colors duration-200 rounded-sm">Logout</a>
+            class="block cursor-pointer py-2 px-4 text-gray-800 hover:text-green-600 transition-colors duration-200 rounded-sm"><i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
         }
       </ul>
